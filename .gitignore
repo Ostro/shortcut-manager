@@ -1,0 +1,9 @@
+# yarn 2
+.yarn
+.pnp.js
+
+# postgres local fixtures
+postgres/
+
+.vscode
+.idea
