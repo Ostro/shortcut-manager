@@ -14,6 +14,12 @@ input ShortcutInput {
   icon: String
 }
 
+input ShortcutEditInput {
+  name: String
+  path: String
+  icon: String
+}
+
 type Query {
   shortcut(id: ID!): Shortcut
   shortcuts: [Shortcut]
@@ -21,7 +27,7 @@ type Query {
 
 type Mutation {
   addShortcut(shortcut: ShortcutInput!): [Shortcut]
-  editShortcut(id: ID!, shortcut: ShortcutInput!): [Shortcut]
+  editShortcut(id: ID!, shortcut: ShortcutEditInput!): [Shortcut]
   removeShortcuts(ids: [ID!]!): [Shortcut]
 }
 `;

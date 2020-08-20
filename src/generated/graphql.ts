@@ -26,7 +26,7 @@ export type MutationAddShortcutArgs = {
 
 export type MutationEditShortcutArgs = {
   id: Scalars['ID'];
-  shortcut: ShortcutInput;
+  shortcut: ShortcutEditInput;
 };
 
 
@@ -50,6 +50,12 @@ export type Shortcut = {
   id: Scalars['ID'];
   name: Scalars['String'];
   path: Scalars['String'];
+  icon?: Maybe<Scalars['String']>;
+};
+
+export type ShortcutEditInput = {
+  name?: Maybe<Scalars['String']>;
+  path?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
 };
 
@@ -144,6 +150,7 @@ export type ResolversTypes = ResolversObject<{
   String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
   ShortcutInput: ShortcutInput;
+  ShortcutEditInput: ShortcutEditInput;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 }>;
 
@@ -155,6 +162,7 @@ export type ResolversParentTypes = ResolversObject<{
   String: Scalars['String'];
   Mutation: {};
   ShortcutInput: ShortcutInput;
+  ShortcutEditInput: ShortcutEditInput;
   Boolean: Scalars['Boolean'];
 }>;
 

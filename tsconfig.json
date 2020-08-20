@@ -7,5 +7,17 @@
     "noImplicitReturns": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "outDir": "build",
+    "sourceMap": true,
+    "types": ["node"],
   },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "scripts",
+    "config",
+    ".yarn",
+    "prisma/generated"
+  ]
 }

@@ -6,11 +6,11 @@ export const addShortcut: MutationResolvers<Context>['addShortcut'] = async (roo
   await ctx.prisma.shortcut.create({
     data: {
       ...shortcut,
-      User: { connect: { shadowUuid: ctx.shadowUuid } }
+      user: { connect: { shadowUuid: ctx.shadowUuid } }
     }
   });
 
   return ctx.prisma.shortcut.findMany({
-    where: { userId: ctx.shadowUuid }
+    where: { userUuid: ctx.shadowUuid }
   });
 };

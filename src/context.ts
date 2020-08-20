@@ -8,6 +8,16 @@ export interface Context {
   shadowUuid: string;
 }
 
-export function createContext({ req }: { req: IncomingMessage }): Context {
-  return { prisma, shadowUuid: req.headers['shadow-uuid'] as string };
+export async function createContext({ req }: { req: IncomingMessage }): Promise<Context> {
+  const shadowUuid = req.headers['shadow-uuid'] as string;
+  if (!shadowUuid) {
+    throw new Error('Expected shadow-uuid header');
+  }
+
+  const user = await prisma.user.findOne({ where: { shadowUuid } })
+  if (!user) {
+    await prisma.user.create({ data: { shadowUuid } })
+  }
+
+  return { prisma, shadowUuid };
 };
