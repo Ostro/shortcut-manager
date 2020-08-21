@@ -1,2 +1,2 @@
-release: yarn install && yarn prisma generate
+release: yarn prisma generate
 web: yarn node ./build/index.js

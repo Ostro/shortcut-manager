@@ -7,7 +7,11 @@ export const editShortcut: MutationResolvers<Context>['editShortcut'] = async (r
       id,
       userUuid: ctx.shadowUuid,
     },
-    data: shortcut,
+    data: {
+      name: shortcut.name ?? undefined,
+      icon: shortcut.icon ?? undefined,
+      path: shortcut.path ?? undefined,
+    },
   })
 
   return ctx.prisma.shortcut.findMany({

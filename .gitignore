@@ -1,13 +1,18 @@
-build/
-prisma/generated
-node_modules/
+/build
+/prisma/generated
+/node_modules
 
 # yarn 2
-.yarn
+/.yarn/unplugged
+/.yarn/build-state.yml
+/.yarn/install-state.gz
+/.yarn/cache
+/.yarn/sdks
 .pnp.js
 
-# postgres local fixtures
-postgres/
 
-.vscode
-.idea
+# postgres local fixtures
+/postgres
+
+/.vscode
+/.idea

@@ -1,10 +1,14 @@
 {
   "name": "shortcut-manager",
   "main": "build/index.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
     "dev": "tsc --watch",
-    "start": "nodemon ./build/index.js"
+    "start": "nodemon ./build/index.js",
+    "build": "tsc"
   },
   "dependencies": {
     "@prisma/client": "2.3.0",
